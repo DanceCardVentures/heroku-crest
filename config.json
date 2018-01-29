@@ -1,9 +1,9 @@
 {
   "db": {
-    "port": 57856,
-    "host": "localhost",
-    "username": "user",
-    "password": "password"
+    "port": 11191,
+    "host": "candidate.16.mongolayer.com",
+    "username": "odata",
+    "password": "fuschia15"
   },
   "server": {
     "port": 8080,
