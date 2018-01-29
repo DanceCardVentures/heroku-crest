@@ -17,7 +17,7 @@ var config = {
     "host": "candidate.16.mongolayer.com"
   },
   "server": {
-    "port": 3500,
+    "port": 80,
     "address": "localhost"
   },
   "flavor": "mongodb",
