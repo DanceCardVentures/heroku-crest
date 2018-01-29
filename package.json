@@ -25,6 +25,7 @@
   "dependencies": {
     "atob": "latest",
     "kerberos": "0.0.23",
+    "moment": "^2.20.1",
     "mongodb": "2.0.x",
     "restify": "2.3.x"
   },
