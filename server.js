@@ -54,7 +54,7 @@ server.use(restify.fullResponse());
 server.use(restify.queryParser());
 server.use(restify.jsonp());
 module.exports.server = server;
-module.exports.https_server = https_Server;
+module.exports.https_server = https_server;
 
 require('./lib/rest');
 
