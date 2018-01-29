@@ -8,7 +8,7 @@
 var fs = require("fs"),
   mongodb = require("mongodb"),
   restify = module.exports.restify = require("restify");
-
+  	
 var DEBUGPREFIX = "DEBUG: ";
 
 var config = {
@@ -43,6 +43,12 @@ var https_server = restify.createServer({
   certificate: fs.readFileSync("/etc/letsencrypt/live/odata.dancecardrx.com/fullchain.pem"),
   key: fs.readFileSync("/etc/letsencrypt/live/odata.dancecardrx.com/privkey.pem")
 });
+https_server.acceptable = ['application/json'];
+https_server.use(restify.acceptParser(https_server.acceptable));
+https_server.use(restify.bodyParser());
+https_server.use(restify.fullResponse());
+https_server.use(restify.queryParser());
+https_server.use(restify.jsonp());
 
 var server = restify.createServer({
   name: "crest"
@@ -53,6 +59,7 @@ server.use(restify.bodyParser());
 server.use(restify.fullResponse());
 server.use(restify.queryParser());
 server.use(restify.jsonp());
+
 module.exports.server = server;
 module.exports.https_server = https_server;
 
