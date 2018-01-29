@@ -23,9 +23,10 @@
     "url": "https://github.com/enreeco/heroku-crest/issues"
   },
   "dependencies": {
+    "atob": "latest",
+    "kerberos": "0.0.23",
     "mongodb": "2.0.x",
-    "restify": "2.3.x",
-    "atob":"latest"
+    "restify": "2.3.x"
   },
   "devDependencies": {
     "supertest": "0.5.x",

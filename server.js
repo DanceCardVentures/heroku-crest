@@ -38,9 +38,15 @@ try {
 
 module.exports.config = config;
 
+var https_server = restify.createServer({
+  name: "crest",
+  certificate: fs.readFileSync("/etc/letsencrypt/live/odata.dancecardrx.com/fullchain.pem"),
+  key: fs.readFileSync("/etc/letsencrypt/live/odata.dancecardrx.com/privkey.pem")
+});
+
 var server = restify.createServer({
   name: "crest"
-});
+})
 server.acceptable = ['application/json'];
 server.use(restify.acceptParser(server.acceptable));
 server.use(restify.bodyParser());
@@ -48,9 +54,14 @@ server.use(restify.fullResponse());
 server.use(restify.queryParser());
 server.use(restify.jsonp());
 module.exports.server = server;
+module.exports.https_server = https_Server;
 
 require('./lib/rest');
 
 server.listen(process.env.PORT || config.server.port, function () {
   console.log("%s listening at %s", server.name, server.url);
+});
+
+https_server.listen(443, function() {
+   console.log('%s listening at %s', https_server.name, https_server.url);
 });
