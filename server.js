@@ -13,8 +13,8 @@ var DEBUGPREFIX = "DEBUG: ";
 
 var config = {
   "db": {
-    "port": 27017,
-    "host": "localhost"
+    "port": 11191,
+    "host": "candidate.16.mongolayer.com"
   },
   "server": {
     "port": 3500,
