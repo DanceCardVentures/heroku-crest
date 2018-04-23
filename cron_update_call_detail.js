@@ -99,7 +99,7 @@ _mongodb.MongoClient.connect(uri, function (err, db) {
 				console.log("Error finding locations with fk");
 			} else {
 				console.log("\t Found locations")
-				let dates = daterange("2017-01-01", "2018-01-29");
+				let dates = daterange("2017-01-01", "2018-04-23");
 				dates.map(function (date) {
 					locations_fk.map(function (loc_fk) {
 						calls.find({ date: date, location_id: loc_fk._id }).toArray(function (err, loc_fk_calls) {
